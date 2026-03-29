@@ -28,5 +28,5 @@ git submodule update --init --recursive
 echo ""
 echo "✅ Ready to open in Android Studio"
 echo "⚠️  Don't forget to add your audio files:"
-echo "    - app/src/main/assets/scratch/scratch_record.wav"
-echo "    - app/src/main/assets/beat/beat_loop.wav"
+echo "    - app/src/main/assets/scratch/scratchy_seal_3d_side_a.wav"
+echo "    - app/src/main/assets/beat/qbert_02_side_b.wav"

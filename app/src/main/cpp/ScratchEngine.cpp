@@ -29,7 +29,7 @@ public:
         float* rawScratch = nullptr;
         int scratchFrames = 0, scratchChannels = 0;
         float* newScratchBuffer = nullptr;
-        if (babyscratch::loadAudioFile(assetManager, "scratch/scratch_record.wav", &rawScratch, &scratchFrames, &scratchChannels)) {
+        if (babyscratch::loadAudioFile(assetManager, "scratch/scratchy_seal_3d_side_a.wav", &rawScratch, &scratchFrames, &scratchChannels)) {
             newScratchBuffer = new float[scratchFrames];
             for (int i = 0; i < scratchFrames; ++i) {
                 if (scratchChannels == 2) {
@@ -45,7 +45,7 @@ public:
         float* rawLoop = nullptr;
         int loopFrames = 0, loopChannels = 0;
         float* newLoopBuffer = nullptr;
-        if (babyscratch::loadAudioFile(assetManager, "beat/beat_loop.wav", &rawLoop, &loopFrames, &loopChannels)) {
+        if (babyscratch::loadAudioFile(assetManager, "beat/qbert_02_side_b.wav", &rawLoop, &loopFrames, &loopChannels)) {
             newLoopBuffer = new float[loopFrames];
             for (int i = 0; i < loopFrames; ++i) {
                 if (loopChannels == 2) {
