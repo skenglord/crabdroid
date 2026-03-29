@@ -10,7 +10,8 @@ mkdir -p app/src/main/cpp
 mkdir -p app/src/main/kotlin/com/babyscratch/audio
 mkdir -p app/src/main/kotlin/com/babyscratch/ui/controls
 mkdir -p app/src/main/kotlin/com/babyscratch/viewmodel
-mkdir -p app/src/main/res/raw
+mkdir -p app/src/main/assets/beat
+mkdir -p app/src/main/assets/scratch
 
 # 2. Initialize git and add the Oboe submodule
 if [ ! -d ".git" ]; then
@@ -26,4 +27,6 @@ git submodule update --init --recursive
 # 3. Print success message
 echo ""
 echo "✅ Ready to open in Android Studio"
-echo "⚠️  Don't forget to add scratch_record.wav and beat_loop.wav to app/src/main/res/raw/"
+echo "⚠️  Don't forget to add your audio files:"
+echo "    - app/src/main/assets/scratch/scratch_record.wav"
+echo "    - app/src/main/assets/beat/beat_loop.wav"
