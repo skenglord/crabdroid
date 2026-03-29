@@ -1,17 +1,8 @@
-import { useState, useEffect } from 'react';
-import { Download, Smartphone, Code2, FileCode2, Terminal, FolderOpen, Music, CheckCircle2 } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
+import { Download, Smartphone, Code2, FileCode2, Terminal, FolderOpen, Music, CircleCheck } from 'lucide-react';
+import Markdown from 'react-markdown';
+import readmeContent from '../README.md?raw';
 
 export default function App() {
-  const [readmeContent, setReadmeContent] = useState('');
-
-  useEffect(() => {
-    fetch('/README.md')
-      .then(res => res.text())
-      .then(text => setReadmeContent(text))
-      .catch(err => console.error("Failed to load README.md", err));
-  }, []);
-
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-50 font-sans selection:bg-emerald-500/30">
       {/* Header */}
@@ -35,7 +26,7 @@ export default function App() {
         {/* Hero Section */}
         <section className="text-center space-y-6 py-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-sm font-medium border border-emerald-500/20 mb-4">
-            <CheckCircle2 className="w-4 h-4" />
+            <CircleCheck className="w-4 h-4" />
             Project Generation Complete
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
@@ -101,7 +92,7 @@ export default function App() {
           </div>
           <div className="prose prose-invert prose-emerald max-w-none">
             {readmeContent ? (
-              <ReactMarkdown>{readmeContent}</ReactMarkdown>
+              <Markdown>{readmeContent}</Markdown>
             ) : (
               <div className="animate-pulse flex space-x-4">
                 <div className="flex-1 space-y-4 py-1">

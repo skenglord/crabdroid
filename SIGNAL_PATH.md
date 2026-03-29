@@ -39,6 +39,7 @@ This path describes the internal mixing and DSP logic.
     *   **Scratch Branch**: `sample * volume * (muted ? 0 : 1)`.
     *   **Loop Branch**: `sample` (always 1.0x speed).
     *   **Summation**: `out[i] = scratchSample + loopSample`.
+    *   **Hard Clipper**: Clamps the summed output to `[-1.0f, 1.0f]` to prevent digital distortion.
 4.  **Oboe / AAudio (Hardware)**:
     *   Streams the interleaved stereo float buffer to the Android Open Audio system.
 
@@ -55,10 +56,10 @@ This path describes how custom sounds are captured and injected into the engine.
     *   Calls `ScratchEngine.swapBuffer(floatArray)`.
 3.  **`ScratchEngine.cpp` (Memory Management)**:
     *   Acquires `bufferMutex_`.
-    *   Deletes the old `scratchBuffer_` from the native heap.
-    *   Allocates a new `float[]` and copies the mic data.
+    *   Swaps the `scratchBuffer_` pointer to the new `float[]` buffer.
     *   Resets `scratchPlayhead_` to 0.
     *   Releases `bufferMutex_`.
+    *   **Optimization**: Deletes the old `scratchBuffer_` from the native heap *outside* the lock to prevent blocking the audio thread.
 
 ---
 

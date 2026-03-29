@@ -2,6 +2,8 @@
 
 A high-performance, low-latency DJ scratch simulator built with Android NDK, Oboe, and Jetpack Compose.
 
+> **Note on Web Preview:** Because this is a native Android application (Kotlin/C++), it cannot be run directly in the web browser preview. The web preview instead displays a React-based landing page that outlines the project structure and compilation instructions.
+
 ## 🛠 Compilation Guide
 
 Because this project relies on C++ (NDK) and CMake, it requires a specific build environment. Below are instructions for compiling in cloud/mobile environments.
